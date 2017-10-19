@@ -1001,11 +1001,11 @@ uint256 WantedByOrphan(const CBlock* pblockOrphan)
 int64_t GetProofOfWorkReward(int64_t nFees)
 {
     
-            int64_t nSubsidy = 20 * COIN;
+            int64_t nSubsidy = 100 * COIN;
 
             if(nBestHeight == 0)
             {
-            nSubsidy = 2000000 * COIN;
+            nSubsidy = 1000000000 * COIN;
             }
 
     if (fDebug && GetBoolArg("-printcreation"))
@@ -1025,7 +1025,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 16 * 60;  // 16 mins
+static const int64_t nTargetTimespan = 2 * 60;  // 16 mins
 
 //
 // maximum nBits value could possible be required nTime after
@@ -2538,7 +2538,7 @@ bool LoadBlockIndex(bool fAllowNew)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
 
-        const char* pszTimestamp = "The Times 03 Jan 2009 Chancellor on brink of second bailout for banks";
+        const char* pszTimestamp = "We are launching Testcoin!!!";
         CTransaction txNew;
         txNew.nTime = 1502292612;
         txNew.vin.resize(1);
@@ -2550,7 +2550,7 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1502292612;
+        block.nTime    = 1508440173;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
         block.nNonce   = !fTestNet ? 1734672 : 1734672;
         
